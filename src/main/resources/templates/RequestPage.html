@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Create request</title>
+
+        <link rel="stylesheet" type="text/css" th:href="@{/css/requestPage.css}"/>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <h1>Create request</h1>
+            <form action="#" method="post" th:action="@{/saveRequest}" th:object="${userRequest}" class="inputs">
+                <div>
+                    <label for="requestType"><span>Request type</span></label>
+                    <select th:field="*{requestType}" id="requestType" class="input-field">
+                        <option th:each="item : ${requestTypes}" th:value="${item}" th:text="${item}"></option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="firstName"><span>First name</span></label>
+                    <input id="firstName" class="input-field" th:field="*{firstName}" type="text" name="firstName" required>
+                    <label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-sign">First Name Error</label>
+                </div>
+
+                <div>
+                    <label for="lastName"><span>Last name</span></label>
+                    <input id="lastName" class="input-field" th:field="*{lastName}" type="text" name="lastName" required>
+                    <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-sign">Last Name Error</label>
+                </div>
+
+                <div>
+                    <label for="policyNumber"><span>Policy Number</span></label>
+                    <input id="policyNumber" class="input-field" th:field="*{policyNumber}" type="number" name="policyNumber" required>
+                    <label th:if="${#fields.hasErrors('policyNumber')}" th:errors="*{policyNumber}" class="error-sign">Policy Number Error</label>
+                </div>
+
+                <div>
+                    <label for="request"><span>Request</span></label>
+                    <textarea id="request" class="input-field" th:field="*{request}" name="request"></textarea>
+                    <label th:if="${#fields.hasErrors('request')}" th:errors="*{request}" class="error-sign">Request Error</label>
+                </div>
+
+                <div class="show-result-table">
+                    <button type="submit" id="show-button" class="submit-button">Save data</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

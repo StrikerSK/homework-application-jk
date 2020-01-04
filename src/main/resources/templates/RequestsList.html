@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Requests page</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/requestsPage.css}"/>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>All requests of all users</h1>
+        <table class="blueTable">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Request type</th>
+                    <th>Request</th>
+                    <th>Policy number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${savedRequests}">
+                    <td th:text="${item.firstName}"></td>
+                    <td th:text="${item.lastName}"></td>
+                    <td th:text="${item.requestType}"></td>
+                    <td th:text="${item.request}"></td>
+                    <td th:text="${item.policyNumber}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
