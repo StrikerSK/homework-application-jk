@@ -23,15 +23,15 @@ public class UserRequest {
 	private Integer policyNumber;
 
 	@Column
-	@Pattern(regexp = "^[A-Z][a-zA-Z]+", message = "Chars only with starting capital letter")
+	@Pattern(regexp = "^[A-Z][a-zA-Z]+", message = "Characters with starting capital letter are only valid!")
 	private String firstName;
 
 	@Column
-	@Pattern(regexp = "^[A-Z][a-zA-Z]+", message = "Chars only with starting capital letter")
+	@Pattern(regexp = "^[A-Z][a-zA-Z]+", message = "Characters with starting capital letter are only valid!")
 	private String lastName;
 
 	@Column
-	@Pattern(regexp = "[a-zA-Z0-9]{0,5000}", message = "Only 5000 chars available")
+	@Pattern(regexp = "[a-zA-Z0-9 _]{0,5000}", message = "Only 5000 characters available!")
 	private String request;
 
 	public UserRequest() {

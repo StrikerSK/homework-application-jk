@@ -39,7 +39,7 @@
 
                 <div>
                     <label for="request"><span>Request</span></label>
-                    <textarea id="request" class="input-field" th:field="*{request}" name="request"></textarea>
+                    <textarea id="request" class="input-field" th:field="*{request}" name="request" maxlength="5000"></textarea>
                     <label th:if="${#fields.hasErrors('request')}" th:errors="*{request}" class="error-sign">Request Error</label>
                 </div>
 

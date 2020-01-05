@@ -21,9 +21,14 @@ public class RequestController {
 		return userService.findAll();
 	}
 
-	@GetMapping("/getOne/{id}")
+	@GetMapping("/{id}")
 	public UserRequest getAllRequests(@PathVariable("id")Long id){
 		return userService.findOneById(id);
+	}
+
+	@PostMapping("/save")
+	public void saveStudent(@RequestBody UserRequest request){
+		userService.createRequest(request);
 	}
 
 	@DeleteMapping("/{id}")
@@ -31,8 +36,9 @@ public class RequestController {
 		userService.deleteRequest(id);
 	}
 
-	@PostMapping("/save")
-	public void saveStudent(@RequestBody UserRequest request){
-		userService.createRequest(request);
+	@PutMapping("/{id}")
+	public void getAllRequests(@RequestBody UserRequest userRequest, @PathVariable("id")Long id){
+		userRequest.setId(id);
+		userService.createRequest(userRequest);
 	}
 }
