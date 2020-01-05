@@ -39,6 +39,11 @@
     width: 95%;
 }
 
+.request-text{
+    resize: none;
+    height: 200px;
+}
+
 .inputs select {
     width: 100%;
 }
