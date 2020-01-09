@@ -6,6 +6,7 @@
         <title>Create request</title>
 
         <link rel="stylesheet" type="text/css" th:href="@{/css/requestPage.css}"/>
+        <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
     </head>
 
     <body>
@@ -38,8 +39,8 @@
                 </div>
 
                 <div>
-                    <label for="request"><span>Request</span></label>
-                    <textarea id="request" class="input-field request-text" th:field="*{request}" name="request" maxlength="5000"></textarea>
+                    <label for="request-area"><span>Request</span></label>
+                    <textarea id="request-area" class="input-field request-text" th:field="*{request}" name="request" maxlength="5000"></textarea>
                     <label th:if="${#fields.hasErrors('request')}" th:errors="*{request}" class="error-sign">Request Error</label>
                 </div>
 
@@ -49,9 +50,11 @@
             </form>
         </div>
 
-        <th:block layout:fragment="script">
-            <script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-            <script th:src="@{/js/script.js}"></script>
-        </th:block>
+        <script th:inline="javascript">
+            $('#request-area').on('input', function () {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        </script>
     </body>
 </html>
