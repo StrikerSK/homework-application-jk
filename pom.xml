@@ -38,9 +38,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
-            <optional>t
-                rue</optional>
+            <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -58,7 +58,6 @@
             <artifactId>jquery</artifactId>
             <version>3.4.1</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
