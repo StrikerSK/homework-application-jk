@@ -5,10 +5,7 @@ import com.inverview.application.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
@@ -49,5 +46,11 @@ public class RequestMainController {
 	public String getRequests(Model model) {
 		model.addAttribute("savedRequests", userService.findAll());
 		return "RequestsList";
+	}
+
+	@RequestMapping("/getOne/{id}")
+	public String getOneItem(@PathVariable Long id, Model model) {
+		model.addAttribute("requestedItem", userService.findOneById(id));
+		return "RequestSingle";
 	}
 }
