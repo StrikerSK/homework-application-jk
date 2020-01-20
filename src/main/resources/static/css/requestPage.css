@@ -39,6 +39,10 @@
     width: 95%;
 }
 
+.request-text{
+    resize: none;
+}
+
 .inputs select {
     width: 100%;
 }

@@ -19,6 +19,7 @@
                     <th>Request type</th>
                     <th>Request</th>
                     <th>Policy number</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -28,9 +29,11 @@
                     <td th:text="${item.requestType}"></td>
                     <td th:text="${item.request}"></td>
                     <td th:text="${item.policyNumber}"></td>
+                    <td><a th:href="${'/getOne/' + item.id}">Click me</a></td>
                 </tr>
             </tbody>
         </table>
+        <a href="/">Create request</a>
     </div>
 </body>
 </html>
