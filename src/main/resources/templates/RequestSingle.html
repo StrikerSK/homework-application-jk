@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title th:text="${'Request: ' + requestedItem.id}"></title>
-</head>
-<body>
-    <div>
-        <p><strong>Requested by </strong><span th:text="${requestedItem.firstName + ' ' + requestedItem.lastName}"></span></p>
-        <p><strong>Request type: </strong><span th:text="${requestedItem.requestType}"></span></p>
-        <p><strong>Request: </strong><span th:text="${requestedItem.request} == '' ? 'No request' : ${requestedItem.request}"></span></p>
-        <p><strong>Policy number: </strong><span th:text="${requestedItem.policyNumber}"></span></p>
-        <a href="/getAll">Go back</a>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title th:text="${'Request: ' + requestedItem.id}"></title>
+    </head>
+
+    <body>
+        <div>
+            <p><strong>Requested by </strong><span th:text="${requestedItem.firstName + ' ' + requestedItem.lastName}"></span></p>
+            <p><strong>Request type: </strong><span th:text="${requestedItem.requestType}"></span></p>
+            <p><strong>Request: </strong><span th:text="${requestedItem.request} == '' ? 'No request' : ${requestedItem.request}"></span></p>
+            <p><strong>Policy number: </strong><span th:text="${requestedItem.policyNumber}"></span></p>
+            <a href="/getAll">Go back</a>
+        </div>
+    </body>
 </html>

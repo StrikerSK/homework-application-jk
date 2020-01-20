@@ -17,27 +17,27 @@ public class RequestController {
 	}
 
 	@GetMapping("/getAll")
-	public List<UserRequest> getAllRequests(){
+	public List<UserRequest> getAllRequests() {
 		return userService.findAll();
 	}
 
 	@GetMapping("/{id}")
-	public UserRequest getAllRequests(@PathVariable("id")Long id){
+	public UserRequest getAllRequests(@PathVariable("id") Long id) {
 		return userService.findOneById(id);
 	}
 
 	@PostMapping("/save")
-	public void saveStudent(@RequestBody UserRequest request){
+	public void saveStudent(@RequestBody UserRequest request) {
 		userService.createRequest(request);
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteRequest(@PathVariable("id")Long id){
+	public void deleteRequest(@PathVariable("id") Long id) {
 		userService.deleteRequest(id);
 	}
 
 	@PutMapping("/{id}")
-	public void getAllRequests(@RequestBody UserRequest userRequest, @PathVariable("id")Long id){
+	public void getAllRequests(@RequestBody UserRequest userRequest, @PathVariable("id") Long id) {
 		userRequest.setId(id);
 		userService.createRequest(userRequest);
 	}

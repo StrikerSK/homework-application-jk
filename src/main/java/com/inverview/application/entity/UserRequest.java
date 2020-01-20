@@ -18,8 +18,8 @@ public class UserRequest {
 	private String requestType;
 
 	@Column
-	@Min(value = 100000, message = "Minimal limit is 100000")
-	@Max(value = 999999, message = "Maximal limit is 999999")
+	@Min(value = 100000, message = "Minimal limit for policy number is 100000")
+	@Max(value = 999999, message = "Maximal limit for policy number is 999999")
 	private Integer policyNumber;
 
 	@Column
